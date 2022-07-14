@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:suitable/widgets/animation_rote_page.dart';
-
-import '../pages/cardapio.dart';
-import '../pages/carrinho.dart';
-import '../pages/conta.dart';
 
 class ScaffoldApp extends StatefulWidget {
   final Widget child;
@@ -22,22 +17,13 @@ class _ScaffoldAppState extends State<ScaffoldApp> {
     setState(() {
       if (index == 0) {
         selectedIndex = index;
-        Navigator.pushReplacement(
-          context,
-          AnimationRotePage.createRoute(const Cardapio()),
-        );
+        Navigator.of(context).pushReplacementNamed('/');
       } else if (index == 1) {
         selectedIndex = index;
-        Navigator.pushReplacement(
-          context,
-          AnimationRotePage.createRoute(const Carrinho()),
-        );
+        Navigator.of(context).pushReplacementNamed('/carrinho');
       } else if (index == 2) {
         selectedIndex = index;
-        Navigator.pushReplacement(
-          context,
-          AnimationRotePage.createRoute(const Conta()),
-        );
+        Navigator.of(context).pushReplacementNamed('/conta');
       }
     });
   }

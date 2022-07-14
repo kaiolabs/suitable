@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:suitable/widgets/scaffold_app.dart';
-
-import '../widgets/animation_rote_page.dart';
 import 'cardapio.dart';
 import 'conta.dart';
 
@@ -48,12 +46,7 @@ class _CarrinhoState extends State<Carrinho> {
                   color: Color.fromARGB(255, 47, 47, 47),
                 ),
               ),
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  AnimationRotePage.createRoute(const Cardapio()),
-                );
-              },
+              onPressed: () {},
             ),
           ],
         ),

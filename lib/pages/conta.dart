@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suitable/widgets/scaffold_app.dart';
 
-import '../widgets/animation_rote_page.dart';
 import 'cardapio.dart';
 import 'carrinho.dart';
 
@@ -90,10 +89,7 @@ class _ContaState extends State<Conta> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          AnimationRotePage.createRoute(const Cardapio()),
-                        );
+                        Navigator.of(context).pushNamed('/');
                       },
                     ),
                   ),
