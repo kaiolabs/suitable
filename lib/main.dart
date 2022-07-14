@@ -1,7 +1,8 @@
-// ignore_for_file: sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
+import 'package:suitable/modules/carrinho_module.dart';
 import 'package:suitable/pages/cardapio.dart';
+
+import 'modules/conta_module.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Cardapio(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Cardapio(),
+        '/carrinho': (context) => const CarrinhoModule(),
+        '/conta': (context) => const ContaModule(),
+      },
     );
   }
 }
