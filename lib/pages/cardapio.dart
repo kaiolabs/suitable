@@ -4,6 +4,8 @@ import 'package:suitable/widgets/scaffold_app.dart';
 import 'package:suitable/widgets/card.dart';
 import 'package:suitable/widgets/item_card.dart';
 
+import '../controllers/app_controller.dart';
+
 class Cardapio extends StatefulWidget {
   const Cardapio({
     Key? key,
@@ -30,9 +32,9 @@ class _CardapioState extends State<Cardapio> {
                 child: Text(
                   'Estamos fechados. Você não poderá concluir o pedido',
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
                   ),
                 ),
               ),
@@ -55,7 +57,9 @@ class _CardapioState extends State<Cardapio> {
                     child: Container(
                         height: 35,
                         alignment: Alignment.centerLeft,
-                        color: const Color.fromARGB(255, 66, 66, 66),
+                        color: ((AppController.instance.isDartTheme == false)
+                            ? Color.fromARGB(255, 236, 236, 236)
+                            : const Color.fromARGB(255, 66, 66, 66)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -65,7 +69,6 @@ class _CardapioState extends State<Cardapio> {
                                   padding: EdgeInsets.only(right: 5),
                                   child: Icon(
                                     Icons.hourglass_empty,
-                                    color: Colors.white,
                                   ),
                                 ),
                                 Text(
@@ -73,7 +76,6 @@ class _CardapioState extends State<Cardapio> {
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white,
                                   ),
                                 ),
                               ],
@@ -84,7 +86,6 @@ class _CardapioState extends State<Cardapio> {
                                   padding: EdgeInsets.only(right: 5),
                                   child: Icon(
                                     Icons.store,
-                                    color: Colors.white,
                                   ),
                                 ),
                                 Padding(
@@ -94,7 +95,6 @@ class _CardapioState extends State<Cardapio> {
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -124,7 +124,9 @@ class _CardapioState extends State<Cardapio> {
               height: 60,
               width: double.infinity,
               child: Container(
-                color: const Color.fromARGB(255, 47, 47, 47),
+                color: ((AppController.instance.isDartTheme == false)
+                    ? const Color.fromARGB(255, 255, 255, 255)
+                    : null),
                 child: Row(
                   children: [
                     // sombra em cima do cardápio
@@ -136,7 +138,6 @@ class _CardapioState extends State<Cardapio> {
                       child: Text('Produtos',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                           )),
                     ),
@@ -146,33 +147,32 @@ class _CardapioState extends State<Cardapio> {
                       child: Theme(
                         data: Theme.of(context)
                             .copyWith(splashColor: Colors.transparent),
-                        child: const TextField(
+                        child: TextField(
                           textInputAction: TextInputAction.done,
                           autofocus: false,
                           decoration: InputDecoration(
-                            fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Colors.white,
+                                color: ((AppController.instance.isDartTheme ==
+                                        true)
+                                    ? Colors.white
+                                    : Colors.black),
                                 width: 1,
                               ),
                             ),
-                            focusedBorder: OutlineInputBorder(
+                            focusedBorder: const OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Colors.white,
                                 width: 1,
                               ),
                             ),
                             hintText: 'Buscar...',
-                            hintStyle: TextStyle(
-                              color: Colors.white,
-                            ),
+                            hintStyle: const TextStyle(),
                             border: InputBorder.none,
                             counterText: '',
-                            contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            prefixIcon: Icon(
+                            contentPadding:
+                                const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            prefixIcon: const Icon(
                               Icons.search,
-                              color: Colors.white,
                             ),
                           ),
                         ),

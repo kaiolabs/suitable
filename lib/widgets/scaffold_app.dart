@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suitable/controllers/app_controller.dart';
 
 class ScaffoldApp extends StatefulWidget {
   final Widget child;
@@ -46,27 +47,36 @@ class _ScaffoldAppState extends State<ScaffoldApp> {
       width: MediaQuery.of(context).size.width * 0.5,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: ((AppController.instance.isDartTheme == false)
+              ? Colors.white
+              : null),
           title: Text(
             widget.title,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
+            style: TextStyle(
+                color: ((AppController.instance.isDartTheme == false)
+                    ? Colors.black
+                    : null)),
           ),
           actions: [
             IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.info,
-                color: Colors.black,
+                color: ((AppController.instance.isDartTheme == false)
+                    ? Colors.black
+                    : null),
               ),
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.brightness_7,
-                color: Colors.black,
+                color: ((AppController.instance.isDartTheme == false)
+                    ? Colors.black
+                    : null),
               ),
-              onPressed: () {},
+              onPressed: () {
+                AppController.instance.changeTheme();
+              },
             ),
             Padding(
               padding: const EdgeInsets.only(right: 10),
@@ -78,19 +88,22 @@ class _ScaffoldAppState extends State<ScaffoldApp> {
                     width: 33,
                     height: 40,
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.language,
-                        color: Colors.black,
+                        color: ((AppController.instance.isDartTheme == false)
+                            ? Colors.black
+                            : null),
                       ),
                       onPressed: () {},
                     ),
                   ),
-                  const Text(
+                  Text(
                     'PT',
                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 13,
-                    ),
+                        fontSize: 13,
+                        color: ((AppController.instance.isDartTheme == false)
+                            ? Colors.black
+                            : null)),
                   ),
                 ],
               ),
@@ -113,10 +126,9 @@ class _ScaffoldAppState extends State<ScaffoldApp> {
             ),
           ],
           currentIndex: selectedIndex,
-          selectedItemColor: const Color.fromARGB(255, 255, 0, 0),
+          selectedItemColor: const Color.fromARGB(255, 238, 86, 86),
           onTap: _onItemTapped,
         ),
-        backgroundColor: const Color.fromARGB(255, 47, 47, 47),
         body: widget.child,
       ),
     );

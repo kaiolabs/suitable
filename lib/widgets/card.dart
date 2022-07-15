@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../controllers/app_controller.dart';
+
 class CardPedido extends StatefulWidget {
   final String titulo;
   final String subtitulo;
@@ -28,7 +30,9 @@ class _CardPedidoState extends State<CardPedido> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      color: const Color.fromARGB(255, 66, 66, 66),
+      color: ((AppController.instance.isDartTheme == false)
+          ? Colors.white
+          : const Color.fromARGB(255, 66, 66, 66)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,14 +43,16 @@ class _CardPedidoState extends State<CardPedido> {
             child: Row(
               children: [
                 Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     border: Border(
                       left: BorderSide(
-                        color: Colors.white,
+                        color: ((AppController.instance.isDartTheme == true)
+                            ? Colors.white
+                            : const Color.fromARGB(255, 66, 66, 66)),
                         width: 7,
                         style: BorderStyle.solid,
                       ),
-                      bottom: BorderSide(
+                      bottom: const BorderSide(
                         color: Color.fromARGB(255, 81, 81, 81),
                         width: 1,
                       ),
@@ -60,7 +66,9 @@ class _CardPedidoState extends State<CardPedido> {
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        const Color.fromARGB(255, 66, 66, 66),
+                        ((AppController.instance.isDartTheme == false)
+                            ? Colors.white
+                            : const Color.fromARGB(255, 66, 66, 66)),
                       ),
                       // borda esquerda do botão fica transparente quando o botão está selecionado
                     ),
@@ -82,8 +90,13 @@ class _CardPedidoState extends State<CardPedido> {
                                     padding: const EdgeInsets.only(left: 7),
                                     child: Text(
                                       widget.titulo,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                      style: TextStyle(
+                                        color: ((AppController
+                                                    .instance.isDartTheme ==
+                                                true)
+                                            ? Colors.white
+                                            : const Color.fromARGB(
+                                                255, 66, 66, 66)),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -94,9 +107,13 @@ class _CardPedidoState extends State<CardPedido> {
                                         const EdgeInsets.only(left: 7, top: 3),
                                     child: Text(
                                       widget.subtitulo,
-                                      style: const TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 214, 214, 214),
+                                      style: TextStyle(
+                                        color: ((AppController
+                                                    .instance.isDartTheme ==
+                                                true)
+                                            ? Colors.white
+                                            : const Color.fromARGB(
+                                                255, 66, 66, 66)),
                                         fontSize: 14,
                                         fontWeight: FontWeight.normal,
                                       ),

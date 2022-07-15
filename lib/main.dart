@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:suitable/modules/carrinho_module.dart';
-import 'package:suitable/pages/cardapio.dart';
-
-import 'modules/conta_module.dart';
+import 'package:suitable/App.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,18 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const Cardapio(),
-        '/carrinho': (context) => const CarrinhoModule(),
-        '/conta': (context) => const ContaModule(),
-      },
-    );
+    return const App();
   }
 }

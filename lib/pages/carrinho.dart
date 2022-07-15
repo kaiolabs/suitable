@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:suitable/widgets/scaffold_app.dart';
-import 'cardapio.dart';
-import 'conta.dart';
 
 class Carrinho extends StatefulWidget {
   const Carrinho({Key? key}) : super(key: key);
@@ -23,14 +21,12 @@ class _CarrinhoState extends State<Carrinho> {
             const Icon(
               Icons.remove_shopping_cart,
               size: 50,
-              color: Colors.white,
             ),
             const Padding(
               padding: EdgeInsets.only(top: 20, bottom: 20),
               child: Text(
                 'Ainda não foram escolhidos produtos',
                 style: TextStyle(
-                  color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -46,7 +42,9 @@ class _CarrinhoState extends State<Carrinho> {
                   color: Color.fromARGB(255, 47, 47, 47),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
             ),
           ],
         ),

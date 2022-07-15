@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suitable/widgets/scaffold_app.dart';
 
-import 'cardapio.dart';
-import 'carrinho.dart';
-
 class Conta extends StatefulWidget {
   const Conta({Key? key}) : super(key: key);
 
@@ -89,7 +86,7 @@ class _ContaState extends State<Conta> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/');
+                        Navigator.of(context).pushReplacementNamed('/');
                       },
                     ),
                   ),
@@ -100,7 +97,7 @@ class _ContaState extends State<Conta> {
           const Padding(
             padding: EdgeInsets.only(bottom: 15),
             child: Text(
-              'Desenvolvido com ❤️ pelo Time 1',
+              'Desenvolvido com ❤️ pelo Kaio',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
