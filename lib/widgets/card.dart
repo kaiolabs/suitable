@@ -97,7 +97,7 @@ class _CardPedidoState extends State<CardPedido> {
                                             ? Colors.white
                                             : const Color.fromARGB(
                                                 255, 66, 66, 66)),
-                                        fontSize: 19,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),

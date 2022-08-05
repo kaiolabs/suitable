@@ -58,7 +58,7 @@ class _CardapioState extends State<Cardapio> {
                         height: 35,
                         alignment: Alignment.centerLeft,
                         color: ((AppController.instance.isDartTheme == false)
-                            ? Color.fromARGB(255, 236, 236, 236)
+                            ? const Color.fromARGB(255, 236, 236, 236)
                             : const Color.fromARGB(255, 66, 66, 66)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
