@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suitable/widgets/scaffold_app.dart';
 
+import '../controllers/app_controller.dart';
+
 class Conta extends StatefulWidget {
   const Conta({Key? key}) : super(key: key);
 
@@ -94,12 +96,14 @@ class _ContaState extends State<Conta> {
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 15),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15),
             child: Text(
-              'Desenvolvido com ❤️ pelo Kaio',
+              'Desenvolvido por Kaio - GitHub: @Kaiolabs',
               style: TextStyle(
-                color: Colors.white,
+                color: ((AppController.instance.isDartTheme == true)
+                    ? Colors.white
+                    : Colors.black),
                 fontSize: 16,
               ),
             ),
